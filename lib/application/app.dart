@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
+import 'package:get/get.dart';
 
 import '../presentation/ui/screens/splash_screen.dart';
 
@@ -8,7 +9,7 @@ class craftBay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: Splash_Screen(),
       theme: ThemeData(
