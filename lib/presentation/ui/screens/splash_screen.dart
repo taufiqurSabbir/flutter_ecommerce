@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/screens/HomeScreen.dart';
+import 'package:flutter_ecommerce/presentation/ui/screens/auth/email_verification.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../utility/image_asset.dart';
@@ -16,7 +17,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
 
   void gotonextScreen() {
     Future.delayed(Duration(seconds: 2)).then((value) {
-      Get.offAll(HomeScreen());
+      Get.offAll(Email_Varification());
 
 
 
