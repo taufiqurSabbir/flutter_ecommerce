@@ -40,16 +40,17 @@ class _Email_VarificationState extends State<Email_Varification> {
               const SizedBox(
                 height: 10,
               ),
-              Text('Please rnter your email address',
+              Text('Please Enter your email address',
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium
                       ?.copyWith(color: Colors.grey)),
               const SizedBox(
-                height: 10,
+                height: 16,
               ),
               TextFormField(
                 decoration: const InputDecoration(
+                  hintText: 'Enter Email Address',
                   contentPadding: EdgeInsets.symmetric(horizontal: 16),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey)),
@@ -60,7 +61,7 @@ class _Email_VarificationState extends State<Email_Varification> {
                 ),
               ),
               const SizedBox(
-                height: 16,
+                height: 20,
               ),
               SizedBox(
                   width: double.infinity,
