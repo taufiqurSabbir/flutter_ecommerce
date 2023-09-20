@@ -65,9 +65,7 @@ class _Email_VarificationState extends State<Email_Varification> {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
 
-                      ),
                       onPressed: () {},
                       child: const Text('Next')))
             ],

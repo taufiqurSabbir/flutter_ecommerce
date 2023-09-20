@@ -13,25 +13,21 @@ class craftBay extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Splash_Screen(),
       theme: ThemeData(
-        // primaryColor: Color(0xff07ADAE),
-        primarySwatch:
-            MaterialColor(AppColors.primarycolor.value, AppColors().color),
-        progressIndicatorTheme: ProgressIndicatorThemeData(
-            // color:  Color(0xff07ADAE)
+          // primaryColor: Color(0xff07ADAE),
+          primarySwatch:
+              MaterialColor(AppColors.primarycolor.value, AppColors().color),
+          progressIndicatorTheme: ProgressIndicatorThemeData(
+              // color:  Color(0xff07ADAE)
+              ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 15),
+            textStyle: const TextStyle(
+                fontSize: 16, fontWeight: FontWeight.w600, letterSpacing: 0.5),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-           style: ElevatedButton.styleFrom(
-             padding: const EdgeInsets.symmetric(vertical: 15),
-             textStyle: const TextStyle(
-                 fontSize: 16,
-                 fontWeight: FontWeight.w600,
-                 letterSpacing: 0.5),
-             shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.circular(10),
-             ),
-           )
-        )
-      ),
+          ))),
     );
   }
 }
