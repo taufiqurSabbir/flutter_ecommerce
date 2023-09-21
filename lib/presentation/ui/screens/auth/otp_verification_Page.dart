@@ -5,6 +5,7 @@ import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../widgets/auth_header.dart';
+import 'complete_profile.dart';
 
 class OtpVerification extends StatefulWidget {
   const OtpVerification({super.key});
@@ -64,7 +65,7 @@ class _OtpVerificationState extends State<OtpVerification> {
               children: [
                 auth_page_header(
                     title: 'Enter OTP Code',
-                    subtitle: 'A 4 Digit OTP code has been sent'),
+                    subtitle: 'A 4 Digit OTP code has been sent', topSize: 100,),
                 Form(
                   child: PinCodeTextField(
 
@@ -118,7 +119,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () {
-                            Get.to(OtpVerification());
+                            Get.to(CompleteProfile());
                           },
                           child: const Text('Next'))),
                 ),

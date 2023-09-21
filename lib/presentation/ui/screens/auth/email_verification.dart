@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:get/get.dart';
 import '../../widgets/auth_header.dart';
 import 'otp_verification_Page.dart';
@@ -20,20 +21,20 @@ class _Email_VarificationState extends State<Email_Varification> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                auth_page_header(title:'Welcome Back',subtitle:'Please Enter your email address'),
+                auth_page_header(title:'Welcome Back',subtitle:'Please Enter your email address', topSize: 100,),
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 5),
                   child: TextFormField(
-                    decoration: const InputDecoration(
+                    decoration:  InputDecoration(
                       hintText: 'Enter Email Address',
                       contentPadding: EdgeInsets.symmetric(horizontal: 16),
                       border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderSide: BorderSide(color: AppColors.primarycolor)),
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderSide: BorderSide(color: AppColors.primarycolor)),
                       disabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderSide: BorderSide(color: AppColors.primarycolor)),
                     ),
                   ),
                 ),
