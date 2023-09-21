@@ -6,17 +6,18 @@ import '../utility/image_asset.dart';
 
 class auth_page_header extends StatelessWidget {
   const auth_page_header({
-    super.key, required this.title, required this.subtitle,
+    super.key, required this.title, required this.subtitle, required this.topSize,
   });
   final String title;
   final String subtitle;
+  final double topSize;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 100,
+         SizedBox(
+          height: topSize,
         ),
         Center(
             child: SvgPicture.asset(
