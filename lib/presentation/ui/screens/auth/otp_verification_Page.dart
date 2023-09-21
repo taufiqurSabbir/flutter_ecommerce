@@ -119,7 +119,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                       width: double.infinity,
                       child: ElevatedButton(
                           onPressed: () {
-                            Get.to(CompleteProfile());
+                            Get.offAll(CompleteProfile());
                           },
                           child: const Text('Next'))),
                 ),
