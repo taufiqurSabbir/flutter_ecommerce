@@ -25,6 +25,7 @@ class _HomeSliderState extends State<HomeSlider> {
               onPageChanged: (int page,_){
                 _selected_slider.value = page;
               }
+
           ),
 
           items: items.map((i) {
@@ -35,6 +36,7 @@ class _HomeSliderState extends State<HomeSlider> {
                     margin: EdgeInsets.symmetric(horizontal: 5.0),
 
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
                         color: AppColors.primarycolor.withOpacity(0.5)
                     ),
                     child: Row(
