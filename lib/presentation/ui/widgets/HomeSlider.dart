@@ -32,14 +32,16 @@ class _HomeSliderState extends State<HomeSlider> {
               builder: (BuildContext context) {
                 return Container(
                     width: MediaQuery.of(context).size.width,
-                    // margin: EdgeInsets.symmetric(horizontal: 2.0),
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
 
                     decoration: BoxDecoration(
                         color: AppColors.primarycolor.withOpacity(0.5)
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.max,
                       children: [
                         Image.network('https://www.pngall.com/wp-content/uploads/5/Purse.png',width: 120,height: 150,),
+                        SizedBox(width: 10,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

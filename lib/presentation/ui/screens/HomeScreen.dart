@@ -45,17 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   CatagoryWidget(
                     name: 'Electronics',
-                    image: ImmageAsset.bed_icon,
+                    image: ImmageAsset.electronics_icon,
                     cataColor: AppColors.primarycolor,
                   ),
                   CatagoryWidget(
                     name: 'Food',
-                    image: ImmageAsset.bed_icon,
+                    image: ImmageAsset.food_icon,
                     cataColor: AppColors.primarycolor,
                   ),
                   CatagoryWidget(
                     name: 'Fashion',
-                    image: ImmageAsset.bed_icon,
+                    image: ImmageAsset.fashion_icon,
                     cataColor: AppColors.primarycolor,
                   ),
                   CatagoryWidget(
