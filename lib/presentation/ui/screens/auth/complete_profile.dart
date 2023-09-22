@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/presentation/ui/screens/HomeScreen.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:flutter_ecommerce/presentation/ui/widgets/auth_header.dart';
 import 'package:get/get.dart';
@@ -63,7 +64,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: (){
-                            Get.to(Categories());
+                            Get.to(HomeScreen());
                           },
                           child: Text('Complete'),
                         ),

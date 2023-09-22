@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:flutter_ecommerce/presentation/ui/widgets/HomeSlider.dart';
-
+import 'package:get/get.dart';
 import '../utility/image_asset.dart';
 import '../widgets/Body_text.dart';
 import '../widgets/CatagoryWidget.dart';
 import '../widgets/ProductWidget.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/home_search_bar.dart';
+import 'category_product.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -46,27 +47,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   CatagoryWidget(
                     name: 'Electronics',
                     image: ImmageAsset.electronics_icon,
-                    cataColor: AppColors.primarycolor,
+                    cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
                   ),
                   CatagoryWidget(
                     name: 'Food',
                     image: ImmageAsset.food_icon,
                     cataColor: AppColors.primarycolor,
+                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
                   ),
                   CatagoryWidget(
                     name: 'Fashion',
                     image: ImmageAsset.fashion_icon,
                     cataColor: AppColors.primarycolor,
+                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
                   ),
                   CatagoryWidget(
                     name: 'Furniture',
                     image: ImmageAsset.bed_icon,
                     cataColor: AppColors.primarycolor,
-                  ),
-                  CatagoryWidget(
-                    name: 'Furniture',
-                    image: ImmageAsset.bed_icon,
-                    cataColor: AppColors.primarycolor,
+                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
                   ),
                 ],
               ),
