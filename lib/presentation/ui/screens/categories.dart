@@ -19,7 +19,7 @@ class _CategoriesState extends State<Categories> {
      child: Container(
        color: AppColors.primarycolor,
        child: Scaffold(
-         body: CatagoryWidget(name: 'Furniture', image: ImmageAsset.bed_icon, cataColor: AppColors.primarycolor,),
+         body: CatagoryWidget(name: 'Furniture', image: ImmageAsset.bed_icon, cataColor: AppColors.primarycolor, onTap: () {  },),
        ),
      ),
    );
