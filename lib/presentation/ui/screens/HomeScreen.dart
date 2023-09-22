@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utility/circularIconButton.dart';
 import '../utility/image_asset.dart';
+import '../widgets/CatagoryWidget.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/home_search_bar.dart';
 
@@ -34,6 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
             home_search_bar(),
             SizedBox(height: 10,),
             HomeSlider(),
+            Row(
+              children: [
+                CatagoryWidget()
+              ],
+            )
 
           ],
         ),
