@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 
+import '../utility/image_asset.dart';
 import '../widgets/CatagoryWidget.dart';
 
 
@@ -18,7 +19,7 @@ class _CategoriesState extends State<Categories> {
      child: Container(
        color: AppColors.primarycolor,
        child: Scaffold(
-         body: CatagoryWidget(),
+         body: CatagoryWidget(name: 'Furniture', image: ImmageAsset.bed_icon, cataColor: AppColors.primarycolor,),
        ),
      ),
    );
