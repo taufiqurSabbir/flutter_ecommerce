@@ -1,12 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:flutter_ecommerce/presentation/ui/widgets/HomeSlider.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../utility/circularIconButton.dart';
 import '../utility/image_asset.dart';
+import '../widgets/Body_text.dart';
 import '../widgets/CatagoryWidget.dart';
+import '../widgets/ProductWidget.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/home_search_bar.dart';
 
@@ -18,28 +17,108 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-          title: home_app_bar(),
+        title: const home_app_bar(),
       ),
-
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            home_search_bar(),
-            SizedBox(height: 10,),
-            HomeSlider(),
-            Row(
-              children: [
-                CatagoryWidget()
-              ],
-            )
+            const home_search_bar(),
+            const SizedBox(
+              height: 10,
+            ),
+            const HomeSlider(),
+            BodyTitle(title_text: 'All Categories', TextColor: Colors.black87, textsize: 20,),
+            SizedBox(
+              height: 15,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CatagoryWidget(
+                    name: 'Electronics',
+                    image: ImmageAsset.bed_icon,
+                    cataColor: AppColors.primarycolor,
+                  ),
+                  CatagoryWidget(
+                    name: 'Food',
+                    image: ImmageAsset.bed_icon,
+                    cataColor: AppColors.primarycolor,
+                  ),
+                  CatagoryWidget(
+                    name: 'Fashion',
+                    image: ImmageAsset.bed_icon,
+                    cataColor: AppColors.primarycolor,
+                  ),
+                  CatagoryWidget(
+                    name: 'Furniture',
+                    image: ImmageAsset.bed_icon,
+                    cataColor: AppColors.primarycolor,
+                  ),
+                  CatagoryWidget(
+                    name: 'Furniture',
+                    image: ImmageAsset.bed_icon,
+                    cataColor: AppColors.primarycolor,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            BodyTitle(title_text: 'Popular', TextColor: Colors.black87, textsize: 20,),
+            SizedBox(height: 20,),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ProductWidget(),
+                  ProductWidget(),
+                  ProductWidget(),
+                  ProductWidget(),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 20,),
+
+            BodyTitle(title_text: 'Special', TextColor: Colors.black87, textsize: 20,),
+            SizedBox(height: 20,),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ProductWidget(),
+                  ProductWidget(),
+                  ProductWidget(),
+                  ProductWidget(),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 20,),
+
+            BodyTitle(title_text: 'New', TextColor: Colors.black87, textsize: 20,),
+            SizedBox(height: 20,),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ProductWidget(),
+                  ProductWidget(),
+                  ProductWidget(),
+                  ProductWidget(),
+                ],
+              ),
+            ),
+
 
           ],
         ),
@@ -47,8 +126,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
 
 
 

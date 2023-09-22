@@ -21,7 +21,7 @@ class _HomeSliderState extends State<HomeSlider> {
         CarouselSlider(
           options: CarouselOptions(height: 163.0,
               autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 2),
+              autoPlayInterval: const Duration(seconds: 10),
               onPageChanged: (int page,_){
                 _selected_slider.value = page;
               }
@@ -32,11 +32,39 @@ class _HomeSliderState extends State<HomeSlider> {
               builder: (BuildContext context) {
                 return Container(
                     width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    // margin: EdgeInsets.symmetric(horizontal: 2.0),
+
                     decoration: BoxDecoration(
-                        color: AppColors.primarycolor
+                        color: AppColors.primarycolor.withOpacity(0.5)
                     ),
-                    child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+                    child: Row(
+                      children: [
+                        Image.network('https://www.pngall.com/wp-content/uploads/5/Purse.png',width: 120,height: 150,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(height: 20,),
+                            Text('Happy New Year',style: TextStyle(color:Colors.white,fontSize: 22,fontWeight: FontWeight.bold)),
+                            Text('Special Deal',style: TextStyle(color:Colors.white,fontSize: 22,fontWeight: FontWeight.bold)),
+                            Text('Save 30%',style: TextStyle(color:Colors.white,fontSize: 22,fontWeight: FontWeight.bold)),
+                           Container(
+                             decoration: BoxDecoration(
+                               color: Colors.white,
+                               borderRadius: BorderRadius.circular(5)
+                             ),
+                             child: Padding(
+                               padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 7),
+                               child: Text('Buy Now',style: TextStyle(color: AppColors.primarycolor,fontWeight: FontWeight.bold),),
+                             ),
+                           ),
+
+                            SizedBox(height: 10,)
+
+                          ],
+                        )
+                      ],
+                    )
                 );
               },
             );
