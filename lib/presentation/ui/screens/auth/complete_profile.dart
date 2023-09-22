@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:flutter_ecommerce/presentation/ui/widgets/auth_header.dart';
+import 'package:get/get.dart';
+import '../categories.dart';
 
 class CompleteProfile extends StatefulWidget {
   const CompleteProfile({super.key});
@@ -60,7 +62,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Get.to(Categories());
+                          },
                           child: Text('Complete'),
                         ),
                       )
