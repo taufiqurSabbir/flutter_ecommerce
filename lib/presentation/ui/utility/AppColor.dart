@@ -14,5 +14,5 @@ class AppColors {
     900: Color.fromRGBO(4, 131, 184, 1),
   };
 
-  static Color primarycolor = Color(0xff07ADAE);
+  static Color primarycolor = Color(0xff08ADAE);
 }
