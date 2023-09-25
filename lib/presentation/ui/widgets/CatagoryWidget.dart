@@ -30,7 +30,9 @@ class CatagoryWidget extends StatelessWidget {
           child: Column(
             children: [
               // Icon(Icons.shop,size: 50,color: AppColors.primarycolor,),
-              SvgPicture.asset(image,colorFilter: ColorFilter.mode(cataColor,BlendMode.srcIn),
+              SvgPicture.asset(
+                  image,
+                  colorFilter: ColorFilter.mode(AppColors.primarycolor, BlendMode.srcIn),
 
               )],
           ),
