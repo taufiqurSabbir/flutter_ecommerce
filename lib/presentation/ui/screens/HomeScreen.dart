@@ -18,6 +18,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  List homeCategory = [
+    "Electronics", "Food", "Fashion", "Furniture"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const home_app_bar(),
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.all(5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -39,40 +45,38 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 15,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CatagoryWidget(
-                    name: 'Electronics',
-                    image: ImmageAsset.electronics_icon,
+            Container(
+              height: 100,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: homeCategory.length,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (_, index){
+                  return  CatagoryWidget(
+                    name: '${homeCategory[index]}',
+                    image: ImageAsset.electronics_icon,
                     cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
-                  ),
-                  CatagoryWidget(
-                    name: 'Food',
-                    image: ImmageAsset.food_icon,
-                    cataColor: AppColors.primarycolor,
-                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
-                  ),
-                  CatagoryWidget(
-                    name: 'Fashion',
-                    image: ImmageAsset.fashion_icon,
-                    cataColor: AppColors.primarycolor,
-                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
-                  ),
-                  CatagoryWidget(
-                    name: 'Furniture',
-                    image: ImmageAsset.bed_icon,
-                    cataColor: AppColors.primarycolor,
-                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
-                  ),
-                ],
+                  );
+                },
               ),
             ),
             SizedBox(height: 20,),
 
-            BodyTitle(title_text: 'Popular', TextColor: Colors.black87, textsize: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BodyTitle(title_text: 'Popular', TextColor: Colors.black87, textsize: 20,),
+                TextButton(
+                  onPressed: (){},
+                  child: Text("See All",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 17
+                    ),
+                  ),
+                )
+              ],
+            ),
             SizedBox(height: 20,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -86,10 +90,22 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-            SizedBox(height: 20,),
-
-            BodyTitle(title_text: 'Special', TextColor: Colors.black87, textsize: 20,),
-            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BodyTitle(title_text: 'Special', TextColor: Colors.black87, textsize: 20,),
+                TextButton(
+                  onPressed: (){},
+                  child: Text("See All",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17
+                    ),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 10,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -102,10 +118,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-            SizedBox(height: 20,),
 
-            BodyTitle(title_text: 'New', TextColor: Colors.black87, textsize: 20,),
-            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BodyTitle(title_text: 'New', TextColor: Colors.black87, textsize: 20,),
+                TextButton(
+                  onPressed: (){},
+                  child: Text("See All",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17
+                    ),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 10,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
