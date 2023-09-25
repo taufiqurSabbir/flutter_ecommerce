@@ -17,7 +17,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
 
   void gotonextScreen() {
     Future.delayed(Duration(seconds: 2)).then((value) {
-      Get.offAll(HomeScreen());
+      Get.offAll(Email_Varification());
 
 
 
