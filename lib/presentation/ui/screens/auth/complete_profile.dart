@@ -3,6 +3,7 @@ import 'package:flutter_ecommerce/presentation/ui/screens/HomeScreen.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:flutter_ecommerce/presentation/ui/widgets/auth_header.dart';
 import 'package:get/get.dart';
+import '../buttom_nav.dart';
 import '../categories.dart';
 
 class CompleteProfile extends StatefulWidget {
@@ -64,7 +65,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: (){
-                            Get.to(HomeScreen());
+                            Get.to(ButtomNav());
                           },
                           child: Text('Complete'),
                         ),
