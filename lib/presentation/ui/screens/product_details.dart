@@ -14,8 +14,21 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   int itemCount =0;
+
+  List _selectColor = [];
+  List<Color> color = [
+    Colors.red, Colors.black, Colors.amber
+  ];
+
+  List _selecteProductSize = [];
+  List<String> productSize = [
+    "S", "M", "X", "XL"
+  ];
+
+
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text('Product Details',style: TextStyle(color: Colors.black),),
@@ -30,10 +43,8 @@ class _ProductDetailsState extends State<ProductDetails> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CarouselSlider(
-
               items: [
                 Container(
-
                   margin: EdgeInsets.all(6.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8.0),
@@ -78,11 +89,13 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(child: Text('Happy new Year special',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
+                  SizedBox(
+                    width:size.width*.70,
+                      child: Text('Happy new Year special save 30%',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w600, color: Colors.black87),)),
 
                   Row(
                     children: [
@@ -151,60 +164,123 @@ class _ProductDetailsState extends State<ProductDetails> {
               child: BodyTitle(title_text: 'Color', TextColor: Colors.black, textsize: 20),
             ),
             SizedBox(height: 10,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.red,
-                  ),
-                  SizedBox(width: 10,),
-                  CircleAvatar(
-                    backgroundColor: Colors.green,
-                  ),
-                  SizedBox(width: 10,),
-                  CircleAvatar(
-                    backgroundColor: Colors.blue,
-                  ),
-                  SizedBox(width: 10,),
-                  Spacer(),
-                ],
-              ),
+            Container(
+              height: 50,
+              padding: const EdgeInsets.symmetric(horizontal: 20.0,),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: color.length,
+                itemBuilder: (_, index){
+                  return InkWell(
+                    onTap: (){
+                      setState(() {
+                        if(_selectColor.contains(color[index])){
+                          _selectColor.remove(color[index]);
+                        }else{
+                          _selectColor.add(color[index]);
+                        }
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: 10),
+                      child: Stack(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: color[index],
+                          ),
+                          _selectColor.contains(color[index]) ?  Padding(
+                              padding: EdgeInsets.all(7),
+                              child: Icon(Icons.check, color: Colors.white,)) : Center()
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              )
             ),
             SizedBox(height: 20,),
-            BodyTitle(title_text: 'Description', TextColor: Colors.black, textsize: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
+              child: BodyTitle(title_text: 'Size', TextColor: Colors.black, textsize: 20),
+            ),
             SizedBox(height: 10,),
+            Container(
+                height: 30,
+                padding: const EdgeInsets.symmetric(horizontal: 20.0,),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: productSize.length,
+                  itemBuilder: (_, index){
+                    return InkWell(
+                      onTap: (){
+                        setState(() {
+                          if(_selecteProductSize.contains(productSize[index])){
+                            _selecteProductSize.remove(productSize[index]);
+                          }else{
+                            _selecteProductSize.add(productSize[index]);
+                          }
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(right: 10),
+                        child: Container(
+                          width: 30, height: 30,
+                          decoration: BoxDecoration(
+                              color:_selecteProductSize.contains(productSize[index]) ? AppColors.primarycolor : Colors.white,
+                              borderRadius: BorderRadius.circular(100),
+                              border: Border.all(width: 1, color: AppColors.primarycolor)
+                          ),
+                          child: Center(
+                            child: Text("${productSize[index]}",
+                              style: TextStyle(
+                                color: _selecteProductSize.contains(productSize[index]) ? Colors.white : Colors.black
+                              ),
+                            ),
+                          ),
+
+                        )
+                      ),
+                    );
+                  },
+                )
+            ),
+
+
+            SizedBox(height: 20,),
+            BodyTitle(title_text: 'Description', TextColor: Colors.black87, textsize: 20),
+            SizedBox(height: 5,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",style: TextStyle(fontSize: 18,color: Colors.black45),),
+              child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",style: TextStyle(fontSize: 15,color: Colors.black45),),
             ),
-            SizedBox(height: 20,),
-            Container(
-              height: 100,
-              decoration: BoxDecoration(
-                color: AppColors.primarycolor.withOpacity(0.1),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20),bottomLeft: Radius.zero,bottomRight: Radius.zero )
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Price',style: TextStyle(fontSize: 25),),
-                        Text('2500 ৳',style: TextStyle(fontSize: 25,color: AppColors.primarycolor),),
-                      ],
-                    ),
-                    SizedBox(width:180, child: ElevatedButton(onPressed: (){}, child: Text('Add to cart')))
-                  ],
-                ),
-              ),
-            )
+            SizedBox(height: 30,),
+
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 100,
+        padding: EdgeInsets.only(left: 20, right: 20),
+        decoration: BoxDecoration(
+            color: AppColors.primarycolor.withOpacity(0.1),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20),bottomLeft: Radius.zero,bottomRight: Radius.zero )
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Price',style: TextStyle(fontSize: 18, color: Colors.black87),),
+                  Text('2500 ৳',style: TextStyle(fontSize: 25,color: AppColors.primarycolor),),
+                ],
+              ),
+              SizedBox(width:180, child: ElevatedButton(onPressed: (){}, child: Text('Add to cart')))
+            ],
+          ),
         ),
       ),
     );
