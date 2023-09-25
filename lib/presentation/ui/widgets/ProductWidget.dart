@@ -47,7 +47,6 @@ class ProductWidget extends StatelessWidget {
                   Container(
                     decoration: const BoxDecoration(
                         color: Colors.white,
-
                         borderRadius: BorderRadius.only(topLeft: Radius.zero,topRight:Radius.zero,bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20) )
                     ),
                     height: 90,
@@ -58,18 +57,19 @@ class ProductWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: 10,),
-                          Center(child: Text('Ledies trendy Purse',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),)),
+                          Center(child: Text('Ledies trendy Purse',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),)),
                           SizedBox(height: 10,),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Spacer(),
-                              Text('2700 ৳',style: TextStyle(fontSize: 20,color: AppColors.primarycolor,fontWeight: FontWeight.bold),),
-                              Spacer(),
-                              Icon(Icons.star,color: Colors.amber,),
-                              Text('4.3',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                              Spacer(),
-                              Icon(Icons.favorite,color: AppColors.primarycolor,),
-                              Spacer(),
+                              Text('2700 ৳',style: TextStyle(fontSize: 18,color: AppColors.primarycolor,fontWeight: FontWeight.bold),),
+                              Row(
+                                children: [
+                                  Icon(Icons.star,color: Colors.amber,),
+                                  Text('4.3',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
+                                ],
+                              ),
+                              Icon(Icons.favorite_border,color: AppColors.primarycolor,),
                             ],
                           ),
                         ],
