@@ -37,24 +37,24 @@ class _CategoriesState extends State<Categories> {
                children: [
                  CatagoryWidget(
                    name: 'Electronics',
-                   image: ImmageAsset.electronics_icon,
+                   image: ImageAsset.electronics_icon,
                    cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
                  ),
                  CatagoryWidget(
                      name: 'Food',
-                     image: ImmageAsset.food_icon,
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Fashion',
-                     image: ImmageAsset.fashion_icon,
+                     image: ImageAsset.fashion_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
                  ),
                  CatagoryWidget(
                      name: 'Furniture',
-                     image: ImmageAsset.bed_icon,
+                     image: ImageAsset.bed_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
                  ),
@@ -66,24 +66,24 @@ class _CategoriesState extends State<Categories> {
                children: [
                  CatagoryWidget(
                    name: 'Electronics',
-                   image: ImmageAsset.electronics_icon,
+                   image: ImageAsset.electronics_icon,
                    cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
                  ),
                  CatagoryWidget(
                      name: 'Food',
-                     image: ImmageAsset.food_icon,
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Fashion',
-                     image: ImmageAsset.fashion_icon,
+                     image: ImageAsset.fashion_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
                  ),
                  CatagoryWidget(
                      name: 'Furniture',
-                     image: ImmageAsset.bed_icon,
+                     image: ImageAsset.bed_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
                  ),
@@ -95,24 +95,24 @@ class _CategoriesState extends State<Categories> {
                children: [
                  CatagoryWidget(
                    name: 'Electronics',
-                   image: ImmageAsset.electronics_icon,
+                   image: ImageAsset.electronics_icon,
                    cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
                  ),
                  CatagoryWidget(
                      name: 'Food',
-                     image: ImmageAsset.food_icon,
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Fashion',
-                     image: ImmageAsset.fashion_icon,
+                     image: ImageAsset.fashion_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
                  ),
                  CatagoryWidget(
                      name: 'Furniture',
-                     image: ImmageAsset.bed_icon,
+                     image: ImageAsset.bed_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
                  ),
@@ -124,24 +124,24 @@ class _CategoriesState extends State<Categories> {
                children: [
                  CatagoryWidget(
                    name: 'Electronics',
-                   image: ImmageAsset.electronics_icon,
+                   image: ImageAsset.electronics_icon,
                    cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
                  ),
                  CatagoryWidget(
                      name: 'Food',
-                     image: ImmageAsset.food_icon,
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Fashion',
-                     image: ImmageAsset.fashion_icon,
+                     image: ImageAsset.fashion_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
                  ),
                  CatagoryWidget(
                      name: 'Furniture',
-                     image: ImmageAsset.bed_icon,
+                     image: ImageAsset.bed_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
                  ),
@@ -153,24 +153,24 @@ class _CategoriesState extends State<Categories> {
                children: [
                  CatagoryWidget(
                    name: 'Electronics',
-                   image: ImmageAsset.electronics_icon,
+                   image: ImageAsset.electronics_icon,
                    cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
                  ),
                  CatagoryWidget(
                      name: 'Food',
-                     image: ImmageAsset.food_icon,
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Fashion',
-                     image: ImmageAsset.fashion_icon,
+                     image: ImageAsset.fashion_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
                  ),
                  CatagoryWidget(
                      name: 'Furniture',
-                     image: ImmageAsset.bed_icon,
+                     image: ImageAsset.bed_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
                  ),
@@ -182,24 +182,24 @@ class _CategoriesState extends State<Categories> {
                children: [
                  CatagoryWidget(
                    name: 'Electronics',
-                   image: ImmageAsset.electronics_icon,
+                   image: ImageAsset.electronics_icon,
                    cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
                  ),
                  CatagoryWidget(
                      name: 'Food',
-                     image: ImmageAsset.food_icon,
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Fashion',
-                     image: ImmageAsset.fashion_icon,
+                     image: ImageAsset.fashion_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
                  ),
                  CatagoryWidget(
                      name: 'Furniture',
-                     image: ImmageAsset.bed_icon,
+                     image: ImageAsset.bed_icon,
                      cataColor: AppColors.primarycolor,
                      onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
                  ),
