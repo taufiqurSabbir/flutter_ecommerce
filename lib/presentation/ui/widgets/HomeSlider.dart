@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../utility/AppColor.dart';
 
@@ -21,6 +22,7 @@ class _HomeSliderState extends State<HomeSlider> {
         CarouselSlider(
           options: CarouselOptions(height: 163.0,
               autoPlay: true,
+              viewportFraction: 1,
               autoPlayInterval: const Duration(seconds: 10),
               onPageChanged: (int page,_){
                 _selected_slider.value = page;
@@ -33,7 +35,7 @@ class _HomeSliderState extends State<HomeSlider> {
               builder: (BuildContext context) {
                 return Container(
                     width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    margin: EdgeInsets.symmetric(horizontal: 10.0),
 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -42,8 +44,9 @@ class _HomeSliderState extends State<HomeSlider> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
+                        SizedBox(width: 5.w,),
                         Image.network('https://www.pngall.com/wp-content/uploads/5/Purse.png',width: 120,height: 150,),
-                        SizedBox(width: 10,),
+                        Spacer(),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,7 +69,8 @@ class _HomeSliderState extends State<HomeSlider> {
                             SizedBox(height: 10,)
 
                           ],
-                        )
+                        ),
+                        SizedBox(width: 12.w,)
                       ],
                     )
                 );
