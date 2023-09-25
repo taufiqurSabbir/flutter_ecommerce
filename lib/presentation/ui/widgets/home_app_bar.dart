@@ -13,7 +13,7 @@ class home_app_bar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(ImmageAsset.navlogo,fit:BoxFit.cover,width: 170,),
+        SvgPicture.asset(ImageAsset.navlogo,fit:BoxFit.cover,width: 170,),
         Spacer(),
         circularIconButton(circleColor: Colors.grey, circleSize:15 , icon_name: Icons.person, icon_color: Colors.black12, icon_size: 25, onTap: () {  },),
         SizedBox(width: 12,),
