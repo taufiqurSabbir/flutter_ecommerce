@@ -21,7 +21,7 @@ class auth_page_header extends StatelessWidget {
         ),
         Center(
             child: SvgPicture.asset(
-              ImmageAsset.logosvg,
+              ImageAsset.logosvg,
               width: 140,
             )),
         const SizedBox(

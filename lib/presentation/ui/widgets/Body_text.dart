@@ -16,7 +16,7 @@ class BodyTitle extends StatelessWidget {
         title_text,
         style: TextStyle(
           fontSize: textsize,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w600,
           color: TextColor,
         ),
       ),
