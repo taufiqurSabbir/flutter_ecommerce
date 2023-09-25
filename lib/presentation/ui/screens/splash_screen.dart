@@ -45,7 +45,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
           Spacer(),
           Center(
               child: SvgPicture.asset(
-            ImmageAsset.logosvg,
+            ImageAsset.logosvg,
             width: 140,
           )),
           Spacer(),
