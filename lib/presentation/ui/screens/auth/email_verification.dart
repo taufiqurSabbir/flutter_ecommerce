@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/presentation/ui/screens/admin/dashboard.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:get/get.dart';
 import '../../widgets/auth_header.dart';
@@ -51,6 +52,20 @@ class _Email_VarificationState extends State<Email_Varification> {
                             Get.to(OtpVerification());
                           },
                           child: const Text('Next'))),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+
+                          onPressed: () {
+                            Get.to(AdminDashboard());
+                          },
+                          child: const Text('Admin'))),
                 )
               ],
             ),
