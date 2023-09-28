@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/screens/wish_list.dart';
@@ -5,25 +8,44 @@ import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
 import 'package:flutter_ecommerce/presentation/ui/widgets/Body_text.dart';
 import 'package:get/get.dart';
 
+import '../../../appConfig.dart';
+import '../../../model/productModel.dart';
+import '../../../model/singleProductModel.dart';
+
 class ProductDetails extends StatefulWidget {
-  const ProductDetails({super.key});
+  const ProductDetails({super.key, required this.singleProductModel});
+
+  final Massage singleProductModel;
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
-  int itemCount =0;
+  int itemCount =1;
 
   List _selectColor = [];
-  List<Color> color = [
-    Colors.red, Colors.black, Colors.amber
-  ];
 
   List _selecteProductSize = [];
-  List<String> productSize = [
-    "S", "M", "X", "XL"
-  ];
+
+  List parseStringToList(String inputString) {
+    // Remove square brackets and split the string by comma and space
+    List listValues = inputString
+        .replaceAll('[', '')
+        .replaceAll(']', '')
+        .split(', ')
+        .map((String value) => value.trim())
+        .toList();
+
+    return listValues;
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    parseStringToList(widget.singleProductModel!.color!);
+  }
 
 
   @override
@@ -42,51 +64,64 @@ class _ProductDetailsState extends State<ProductDetails> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CarouselSlider(
-              items: [
-                Container(
-                  margin: EdgeInsets.all(6.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                      image: NetworkImage("https://static-01.daraz.com.bd/p/82af30a090b3d3e5a59c1d5f8903060b.jpg"),
-                      fit: BoxFit.cover,
+            // CarouselSlider(
+            //   items: [
+            //     Container(
+            //       margin: EdgeInsets.all(6.0),
+            //       decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.circular(8.0),
+            //         image: DecorationImage(
+            //           image: NetworkImage("https://static-01.daraz.com.bd/p/82af30a090b3d3e5a59c1d5f8903060b.jpg"),
+            //           fit: BoxFit.cover,
+            //         ),
+            //       ),
+            //     ),
+            //     Container(
+            //       margin: EdgeInsets.all(6.0),
+            //       decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.circular(8.0),
+            //         image: DecorationImage(
+            //           image: NetworkImage("https://static-01.daraz.com.bd/p/d074b19b805fbef9d339f4ee69248206.jpg"),
+            //           fit: BoxFit.cover,
+            //         ),
+            //       ),
+            //     ),
+            //     Container(
+            //       margin: EdgeInsets.all(6.0),
+            //       decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.circular(8.0),
+            //         image: DecorationImage(
+            //           image: NetworkImage("https://giftall.s3.amazonaws.com/uploads/images/product/product_639e950f58065_1126988548.jpg"),
+            //           fit: BoxFit.cover,
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            //     options: CarouselOptions(
+            //       viewportFraction: 1,
+            //   height: 400.0,
+            //   enlargeCenterPage: true,
+            //   autoPlay: true,
+            //   aspectRatio: 16 / 9,
+            //   autoPlayCurve: Curves.fastOutSlowIn,
+            //   enableInfiniteScroll: true,
+            //   autoPlayAnimationDuration: Duration(milliseconds: 800),
+            //
+            //
+            // ),
+            // ),
+            Container(
+              color: AppColors.primarycolor.withOpacity(0.1),
+              padding: EdgeInsets.all(50),
+              child: CachedNetworkImage(
+                imageUrl: "${AppConfig.PRODUCT_IMAGE_URL}${widget.singleProductModel.image}",
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: CircularProgressIndicator(value: downloadProgress.progress),
                     ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(6.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                      image: NetworkImage("https://static-01.daraz.com.bd/p/d074b19b805fbef9d339f4ee69248206.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(6.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                      image: NetworkImage("https://giftall.s3.amazonaws.com/uploads/images/product/product_639e950f58065_1126988548.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ],
-                options: CarouselOptions(
-                  viewportFraction: 1,
-              height: 400.0,
-              enlargeCenterPage: true,
-              autoPlay: true,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-
-
-            ),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
@@ -94,8 +129,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width:size.width*.70,
-                      child: Text('Happy new Year special save 30%',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w600, color: Colors.black87),)),
+                    width:size.width*.65,
+                      child: Text('${widget.singleProductModel.name}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.w600, color: Colors.black87),)),
 
                   Row(
                     children: [
@@ -106,7 +141,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             setState(() {
                             });
                           }else{
-                              Get.snackbar('Warning', 'Minium Quantity 1');
+                              Get.snackbar('Warning', 'Minimum Quantity 1');
                           }
                         },
                         child: Container(
@@ -146,7 +181,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 SizedBox(width: 15,),
                 Icon(Icons.star,color: Colors.amber,),
                 SizedBox(width: 15,),
-                Text('4.3',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                Text('4.8',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                 SizedBox(width: 15,),
                 InkWell(
                     onTap: (){
@@ -169,11 +204,24 @@ class _ProductDetailsState extends State<ProductDetails> {
               padding: const EdgeInsets.symmetric(horizontal: 20.0,),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: color.length,
+                itemCount: widget.singleProductModel!.color!
+                    .replaceAll('[', '')
+                    .replaceAll(']', '')
+                    .split(', ')
+                    .map((String value) => value.trim())
+                    .toList().length,
                 itemBuilder: (_, index){
+                  var color = widget.singleProductModel!.color!
+                      .replaceAll('[', '')
+                      .replaceAll(']', '')
+                      .split(', ')
+                      .map((String value) => value.trim())
+                      .toList();
+                  print("color[index].length ${color[index].length}");
                   return InkWell(
                     onTap: (){
                       setState(() {
+                        _selectColor.clear();
                         if(_selectColor.contains(color[index])){
                           _selectColor.remove(color[index]);
                         }else{
@@ -186,7 +234,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       child: Stack(
                         children: [
                           CircleAvatar(
-                            backgroundColor: color[index],
+                            backgroundColor: Color(int.parse("0xff${color[index].replaceAll('"', '')}")),
                           ),
                           _selectColor.contains(color[index]) ?  Padding(
                               padding: EdgeInsets.all(7),
@@ -209,8 +257,19 @@ class _ProductDetailsState extends State<ProductDetails> {
                 padding: const EdgeInsets.symmetric(horizontal: 20.0,),
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: productSize.length,
+                  itemCount: widget.singleProductModel!.size!
+                      .replaceAll('[', '')
+                      .replaceAll(']', '')
+                      .split(', ')
+                      .map((String value) => value.trim())
+                      .toList().length,
                   itemBuilder: (_, index){
+                    var productSize = widget.singleProductModel!.size!
+                        .replaceAll('[', '')
+                        .replaceAll(']', '')
+                        .split(', ')
+                        .map((String value) => value.trim())
+                        .toList();
                     return InkWell(
                       onTap: (){
                         setState(() {
@@ -226,12 +285,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                         child: Container(
                           width: 30, height: 30,
                           decoration: BoxDecoration(
-                              color:_selecteProductSize.contains(productSize[index]) ? AppColors.primarycolor : Colors.white,
+                              color: _selecteProductSize.contains(productSize[index]) ? AppColors.primarycolor : Colors.white,
                               borderRadius: BorderRadius.circular(100),
                               border: Border.all(width: 1, color: AppColors.primarycolor)
                           ),
                           child: Center(
-                            child: Text("${productSize[index]}",
+                            child: Text("${productSize[index].replaceAll('"', '')}",
                               style: TextStyle(
                                 color: _selecteProductSize.contains(productSize[index]) ? Colors.white : Colors.black
                               ),
@@ -251,7 +310,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             SizedBox(height: 5,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",style: TextStyle(fontSize: 15,color: Colors.black45),),
+              child: Text("${widget.singleProductModel.description}",style: TextStyle(fontSize: 15,color: Colors.black45),),
             ),
             SizedBox(height: 30,),
 
@@ -275,7 +334,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Price',style: TextStyle(fontSize: 18, color: Colors.black87),),
-                  Text('2500 ৳',style: TextStyle(fontSize: 25,color: AppColors.primarycolor),),
+                  Text('${widget.singleProductModel.price} ৳',style: TextStyle(fontSize: 25,color: AppColors.primarycolor),),
                 ],
               ),
               SizedBox(width:180, child: ElevatedButton(onPressed: (){}, child: Text('Add to cart')))

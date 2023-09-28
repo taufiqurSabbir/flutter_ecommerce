@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/presentation/ui/utility/AppColor.dart';
-import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import '../utility/image_asset.dart';
 import '../widgets/CatagoryWidget.dart';
-import 'category_product.dart';
 
 
 class Categories extends StatefulWidget {
@@ -36,27 +34,28 @@ class _CategoriesState extends State<Categories> {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
                  CatagoryWidget(
-                   name: 'Electronics',
-                   image: ImageAsset.electronics_icon,
-                   cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
+                     cataColor: AppColors.primarycolor,
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Food',
                      image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Fashion',
-                     image: ImageAsset.fashion_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Furniture',
-                     image: ImageAsset.bed_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                ],
              ),
@@ -65,27 +64,28 @@ class _CategoriesState extends State<Categories> {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
                  CatagoryWidget(
-                   name: 'Electronics',
-                   image: ImageAsset.electronics_icon,
-                   cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
+                     cataColor: AppColors.primarycolor,
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Food',
                      image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Fashion',
-                     image: ImageAsset.fashion_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Furniture',
-                     image: ImageAsset.bed_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                ],
              ),
@@ -94,27 +94,28 @@ class _CategoriesState extends State<Categories> {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
                  CatagoryWidget(
-                   name: 'Electronics',
-                   image: ImageAsset.electronics_icon,
-                   cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
+                     cataColor: AppColors.primarycolor,
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Food',
                      image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Fashion',
-                     image: ImageAsset.fashion_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Furniture',
-                     image: ImageAsset.bed_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                ],
              ),
@@ -123,27 +124,28 @@ class _CategoriesState extends State<Categories> {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
                  CatagoryWidget(
-                   name: 'Electronics',
-                   image: ImageAsset.electronics_icon,
-                   cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
+                     cataColor: AppColors.primarycolor,
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Food',
                      image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Fashion',
-                     image: ImageAsset.fashion_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Furniture',
-                     image: ImageAsset.bed_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                ],
              ),
@@ -152,27 +154,28 @@ class _CategoriesState extends State<Categories> {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
                  CatagoryWidget(
-                   name: 'Electronics',
-                   image: ImageAsset.electronics_icon,
-                   cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
+                     cataColor: AppColors.primarycolor,
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Food',
                      image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Fashion',
-                     image: ImageAsset.fashion_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Furniture',
-                     image: ImageAsset.bed_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                ],
              ),
@@ -181,27 +184,28 @@ class _CategoriesState extends State<Categories> {
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
                  CatagoryWidget(
-                   name: 'Electronics',
-                   image: ImageAsset.electronics_icon,
-                   cataColor: AppColors.primarycolor, onTap: () {Get.to(CategoryProducts(cataName: 'Electronics',));  },
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
+                     cataColor: AppColors.primarycolor,
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
                      name: 'Food',
                      image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Food',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Fashion',
-                     image: ImageAsset.fashion_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Fashion',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                  CatagoryWidget(
-                     name: 'Furniture',
-                     image: ImageAsset.bed_icon,
+                     name: 'Food',
+                     image: ImageAsset.food_icon,
                      cataColor: AppColors.primarycolor,
-                     onTap: () {Get.to(CategoryProducts(cataName: 'Furniture',));  }
+                     onTap: () {}//Get.to(CategoryProducts(cataName: 'Food',));  }
                  ),
                ],
              ),

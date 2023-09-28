@@ -18,30 +18,30 @@ class WishList extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 15,),
-            Row(
-              children: [
-                ProductWidget(),
-                ProductWidget(),
-              ],
-            ),
-            Row(
-              children: [
-                ProductWidget(),
-                ProductWidget(),
-              ],
-            ),
-            Row(
-              children: [
-                ProductWidget(),
-                ProductWidget(),
-              ],
-            ),
-
-          ],
-        ),
+        // child: Column(
+        //   children: [
+        //     SizedBox(height: 15,),
+        //     Row(
+        //       children: [
+        //         ProductWidget(),
+        //         ProductWidget(),
+        //       ],
+        //     ),
+        //     Row(
+        //       children: [
+        //         ProductWidget(),
+        //         ProductWidget(),
+        //       ],
+        //     ),
+        //     Row(
+        //       children: [
+        //         ProductWidget(),
+        //         ProductWidget(),
+        //       ],
+        //     ),
+        //
+        //   ],
+        // ),
       ),
     );
   }

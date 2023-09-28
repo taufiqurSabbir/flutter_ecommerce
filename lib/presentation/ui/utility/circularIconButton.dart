@@ -16,7 +16,7 @@ class circularIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(30),
-      onTap: (){},
+      onTap: onTap,
       child: CircleAvatar(
         radius: circleSize,
         backgroundColor: circleColor.withOpacity(0.3),

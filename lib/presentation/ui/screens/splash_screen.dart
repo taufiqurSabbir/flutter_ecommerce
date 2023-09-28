@@ -3,7 +3,9 @@ import 'package:flutter_ecommerce/presentation/ui/screens/HomeScreen.dart';
 import 'package:flutter_ecommerce/presentation/ui/screens/auth/email_verification.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../utility/image_asset.dart';
+import 'buttom_nav.dart';
 
 class Splash_Screen extends StatefulWidget {
   const Splash_Screen({Key? key}) : super(key: key);
@@ -15,16 +17,18 @@ class Splash_Screen extends StatefulWidget {
 class _Splash_ScreenState extends State<Splash_Screen> {
 
 
+  var token;
   void gotonextScreen() {
-    Future.delayed(Duration(seconds: 2)).then((value) {
-      Get.offAll(Email_Varification());
-
-
-
-      // Navigator.pushAndRemoveUntil(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => HomeScreen()),
-      //     (route) => false);
+    Future.delayed(Duration(seconds: 2)).then((value) async{
+      SharedPreferences _pref = await SharedPreferences.getInstance();
+      setState(() {
+        token = _pref.getString("token");
+      });
+      if(token != null){
+        Get.offAll(ButtomNav());
+      }else{
+        Get.offAll(Email_Varification());
+      }
     });
   }
 
